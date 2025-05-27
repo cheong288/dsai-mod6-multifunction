@@ -1,0 +1,25 @@
+<head>
+    <meta name ="viewport" content ="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='styles.css')}}">
+</head>
+<body>
+    <div class="container">
+        <h2>User Log</h2>
+        {% if rows %}
+            <ul>
+                {% for row in rows %}
+                    <li>{{ row[0] }} - {{ row[1] }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No users found.</p>
+        {% endif %}
+        
+        <form action="/add_user" method="post">
+            <input type="submit" value="Add User" class="custom-submit">
+        </form>
+        <a href="/index">
+            <button type="button">Back to Index</button>
+        </a>
+    </div>
+</body>

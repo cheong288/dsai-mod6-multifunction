@@ -1,0 +1,15 @@
+<head>
+    <meta name ="viewport" content ="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='styles.css')}}">
+</head>
+<body>
+    <div class="container">
+        <p>Log has been deleted! </p> 
+        <form action="/add_user" method="post">        
+            <input type="submit" value="Add User" class="custom-submit">
+        </form>
+        <a href="/">
+            <button type="button">Back to Index</button>
+        </a>
+    </div>
+</body>

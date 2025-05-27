@@ -1,0 +1,24 @@
+<head>
+    <meta name ="viewport" content ="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='styles.css')}}">
+</head>
+<body>
+    <div class="container">
+        <h2>Web Application</h2>
+        <form action="/add_user" method="post">
+            <p>Please provide user name: </p>
+            <input type = "text" name="q" placeholder="Enter name">           
+            <input type="submit" value="Submit" class="custom-submit">
+        </form>
+        
+        {% if error %}
+            <p style="color: red;">{{ error }}</p>
+        {% else %}
+        <p>User added successfully.</p>
+        {% endif %}
+
+        <a href="/index">
+            <button type="button">Back to Index</button>
+        </a>
+    </div>
+</body>

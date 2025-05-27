@@ -1,0 +1,7 @@
+Flask
+pandas
+gunicorn
+pysqlite3
+google-generativeai
+python-dotenv
+requests
