@@ -136,5 +136,19 @@ def telegram():
     # if the server doesn't respond in time
     return('ok', 200)
 
+@app.route("/stop_telegram", methods=["GET", "POST"])
+def stop_telegram():
+
+# Remove the webhook URL for the Telegram bot
+    webhook_url = f"https://api.telegram.org/bot{telegram_key}/deleteWebhook"
+    remove_webhook_response = requests.post(webhook_url)
+    print(remove_webhook_response)
+    if remove_webhook_response.status_code == 200:
+        status = "The telegram bot is stopped."
+    else:
+        status = "Unable to stop telegram.Please check the logs."
+
+    return (render_template("stop_telegram.html"))
+
 if __name__ == '__main__':
     app.run()
