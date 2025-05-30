@@ -104,7 +104,7 @@ def start_telegram():
     print('webhook:', webhook_response)
     if webhook_response.status_code == 200:
         # set status message
-        status = "The telegram bot is running. Please check with the telegram bot t.me/dsai_ttt_gemini_bot"
+        status = "The telegram bot is running. Please check with the telegram bot https://t.me/dsai_chw_bot or @dsai_chw_bot"
     else:
         status = "Failed to start the telegram bot. Please check the logs."
     
